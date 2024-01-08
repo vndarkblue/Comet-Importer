@@ -2,9 +2,8 @@
   <a href="https://github.com/vndarkblue/Comet-Importer">
     <img src="comet_logo.png" alt="Logo" width="256" height="256">
   </a>
-
   
-  Comet Importer
+  Comet Importer ☄️
 </h1>
 <div align="center">
   <h3><a href="https://github.com/vndarkblue/Comet-Importer/releases/latest">Download Latest Release</a><h3>
@@ -14,9 +13,12 @@ Want to share all of your beatmaps to your friends but compressing the whole Son
 
 Want to create a back up file for the beatmaps you have so you won't lose them?
 
-**Comet Importer** is here to help!!
+**Comet Importer** is here to help!!☄️
 
-![Suisei](doc/suisei.gif)
+<a href="https://www.youtube.com/@HoshimachiSuisei">
+    <img src="doc/suisei.gif" alt="Suisei">
+  </a>
+
 </div>
 
 <details open="open">
@@ -31,7 +33,7 @@ Want to create a back up file for the beatmaps you have so you won't lose them?
 
 </details>
 
-## About
+## ℹ️ About 
 
 <table>
 <tr>
@@ -53,7 +55,7 @@ What **Comet Importer** cannot do:
 </tr>
 </table>
 
-### Screenshots
+### 📸 Screenshots
 
 Interface
 
@@ -66,16 +68,17 @@ Export
 Download
 
 ![Download screenshot](doc/download.png)
+
 ![Download screenshot 2](doc/download2.png)
 
 
-## Getting Started
+## 💡 Getting Started
 
-### Prerequisites
+### 📑 Prerequisites
 
 [osu!](https://osu.ppy.sh)
 
-### Usage
+### 📑 Usage
 
 <a href="https://github.com/nzbasic/batch-beatmap-downloader/releases/latest">Download the latest release here</a>
 
@@ -90,7 +93,7 @@ Download
 - Click **_Start_**
 - The beatmaps will be downloaded via beatconnect and saved in the "Download" folder.
 
-## Support
+## 📝 Contact & Support
 
 You can find me at one of the following places:
 
