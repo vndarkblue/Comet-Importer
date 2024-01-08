@@ -4,6 +4,8 @@ using System.IO;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
+
 
 public class Download
 {
@@ -12,7 +14,7 @@ public class Download
     {
         string url = $"https://beatconnect.io/b/{setId}";
         string filePath = Path.Combine("Download", $"{setId}.osz");
-
+        logScreen.Invoke((MethodInvoker)(() => logScreen.AppendText($"Start downloading beatmapsetID {setId}\n")));
         try
         {
             using (HttpResponseMessage response = await client.GetAsync(url, HttpCompletionOption.ResponseHeadersRead))
@@ -48,7 +50,7 @@ public class Download
 
     public static async Task ParallelDownloadAsync(List<string> idList, int maxConcurrentDownloads, RichTextBox logScreen, ProgressBar progressBar)
     {
-        logScreen.Invoke((MethodInvoker)(() => logScreen.AppendText("Starting downloads. Please wait...")));
+        logScreen.Invoke((MethodInvoker)(() => logScreen.AppendText("Starting downloads. Please wait...\n")));
         List<string> failedDownloads = new List<string>();
         List<Task> downloadTasks = new List<Task>();
 
@@ -88,7 +90,15 @@ public class Download
         }
         else
         {
-            MessageBox.Show("All downloads completed successfully!", "Download", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Ask the user if they want to open the "Download" folder
+            DialogResult result = MessageBox.Show("All downloads completed successfully! \nDo you want to open the Download folder?", "Download", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Open the "Download" folder
+                string downloadFolderPath = Path.Combine(Application.StartupPath, "Download");
+                Process.Start("explorer.exe", downloadFolderPath);
+            }
         }
     }
 }

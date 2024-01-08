@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using System.Diagnostics;
+
 
 public class fileManager
 {
@@ -105,6 +107,15 @@ public class fileManager
 
             logScreen.Invoke((MethodInvoker)(() => logScreen.AppendText($"Beatmapset IDs exported to {exportFilename}\n")));
             MessageBox.Show("Export completed successfully!", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            // Ask the user if they want to open the "Export" folder
+            DialogResult result = MessageBox.Show("Export completed successfully! \nDo you want to open the Export folder?", "Export", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Open the "Export" folder
+                string exportFolderPath = Path.Combine(Application.StartupPath, "Export");
+                Process.Start("explorer.exe", exportFolderPath);
+            }
         }
         catch (Exception ex)
         {
