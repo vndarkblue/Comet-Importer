@@ -27,7 +27,6 @@ Want to create a back up file for the beatmaps you have so you won't lose them?
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Usage](#usage)
-    - [Build instructions](#building-yourself-for-devs)
 - [Support](#support)
 
 </details>
