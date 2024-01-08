@@ -48,6 +48,7 @@ public class Download
 
     public static async Task ParallelDownloadAsync(List<string> idList, int maxConcurrentDownloads, RichTextBox logScreen, ProgressBar progressBar)
     {
+        logScreen.Invoke((MethodInvoker)(() => logScreen.AppendText("Starting downloads. Please wait...")));
         List<string> failedDownloads = new List<string>();
         List<Task> downloadTasks = new List<Task>();
 
